@@ -1,6 +1,6 @@
 <%-- 
     Document   : home
-    Created on : Dec 5, 2024, 7:18:23 AM
+    Created on : Jan 1, 2025, 2:53:37 PM
     Author     : User
 --%>
 
@@ -8,111 +8,49 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Library System</title>
-        <style>
-            body{
-                font-family: Arial, sans-serif;
-                margin: 0;
-                padding: 0;
-            }
-
-            .container{
-                margin: 150px 350px 10px 350px;
-                background-color: white;
-                display: flex;
-                align-items:left;
-                height: 40vh;
-
-            }
-
-            .navbar{
-                background-color: white;
-                padding: 10px 20px;
-                border-bottom: 1px solid #ddd;
-                display: flex;
-                align-items: center;
-            }
-
-            .navbar img{
-                height: 40px;
-                margin-right: 10px; 
-            }
-
-            .login-container {
-                width: 300px;
-                background: yellow;
-                padding: 20px;
-                border-radius: 5px;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                text-align: center;
-            }
-            
-            .login-container h1{
-                margin-top: 50px;
-            }
-
-
-            .login-form label {
-                display: block;
-                text-align: left;
-                
-                margin-left: 60px;
-                margin-top: 30px;
-                font-size: 14px;
-                color: #555;
-            }
-
-            .login-form input {
-                width: 100%;
-                padding: 8px;
-                
-                margin-left: 60px;
-                border: 1px solid #ccc;
-                border-radius: 4px;
-            }
-
-            .login-btn {
-                width: 105%;
-                margin-left: 60px;
-                margin-top: 30px;
-                background-color: #007bff;
-                color: #fff;
-                border: none;
-                padding: 10px;
-                font-size: 16px;
-                border-radius: 4px;
-                cursor: pointer;
-            }
-
-            .login-btn:hover {
-                background-color: #0056b3;
-            }
-            
-            .login-container img{
-                width: 200px;
-            }
-            
-        </style>
+        <title>Library Management System</title>
     </head>
-    <body style="background-image: url('../images/background.jpg'); background-size: cover; ">
-        <div class='navbar'>
-            <img src="../images/Logo.png">
-        </div>
-        <div class='container'>
-            <div class="login-container">
-                <img src="../images/Logo.png">
-                <h1>Login Here..</h1>
+    <body style="margin: 0; font-family: Arial, sans-serif;">
+        <nav style="background-color: #2c3e50; padding: 15px; color: white;">
+            <a href="home.jsp">
+                <img src="../images/Logo.png" width="175px">   
+            </a>
+        </nav>
+
+        <div style="display: flex; min-height: calc(100vh - 120px);">
+            <!-- Sidebar -->
+            <%@include file="header.jsp" %>
+
+            <!-- Main Content -->
+            <div style="flex-grow: 1; padding: 20px; background-color: #f5f6fa;">
+                <div style="margin-bottom: 20px;">
+                    <img src="../images/BGimage.jpeg" style="width: 100%; height: 300px; object-fit: cover; border-radius: 8px;">
+                </div>
+
+                <!-- Dashboard Cards -->
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
+                    <div style="background-color: #3498db; color: white; padding: 20px; border-radius: 8px;">
+                        <h3 style="margin: 0;">Total Books</h3>
+                        <p style="font-size: 24px; margin: 10px 0;">1,234</p>
+                    </div>
+                    <div style="background-color: #2ecc71; color: white; padding: 20px; border-radius: 8px;">
+                        <h3 style="margin: 0;">Available Books</h3>
+                        <p style="font-size: 24px; margin: 10px 0;">1,100</p>
+                    </div>
+                    <div style="background-color: #e74c3c; color: white; padding: 20px; border-radius: 8px;">
+                        <h3 style="margin: 0;">Borrowed Books</h3>
+                        <p style="font-size: 24px; margin: 10px 0;">134</p>
+                    </div>
+                    <div style="background-color: #f1c40f; color: white; padding: 20px; border-radius: 8px;">
+                        <h3 style="margin: 0;">Total Members</h3>
+                        <p style="font-size: 24px; margin: 10px 0;">567</p>
+                    </div>
+                </div>
             </div>
-            <form class="login-form">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" placeholder="Enter username">
-
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" placeholder="Enter password">
-
-                <button type="submit" class="login-btn">Login</button>
-            </form>
         </div>
+
+        <footer style="background-color: #2c3e50; color: white; text-align: center; padding: 15px;">
+            Library System © All rights reserved 2025
+        </footer>
     </body>
 </html>
