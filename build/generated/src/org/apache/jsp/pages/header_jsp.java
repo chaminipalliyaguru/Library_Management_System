@@ -4,17 +4,12 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class header_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
 
   private static java.util.List<String> _jspx_dependants;
-
-  static {
-    _jspx_dependants = new java.util.ArrayList<String>(1);
-    _jspx_dependants.add("/pages/header.jsp");
-  }
 
   private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
 
@@ -52,24 +47,6 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<!DOCTYPE html>\n");
       out.write("<html>\n");
       out.write("    <head>\n");
-      out.write("        <title>Library Management System</title>\n");
-      out.write("    </head>\n");
-      out.write("    <body style=\"margin: 0; font-family: Arial, sans-serif;\">\n");
-      out.write("        <nav style=\"background-color: #2c3e50; padding: 15px; color: white;\">\n");
-      out.write("            <a href=\"home.jsp\">\n");
-      out.write("                <img src=\"../images/Logo.png\" width=\"175px\">   \n");
-      out.write("            </a>\n");
-      out.write("        </nav>\n");
-      out.write("\n");
-      out.write("        <div style=\"display: flex; min-height: calc(100vh - 120px);\">\n");
-      out.write("            <!-- Sidebar -->\n");
-      out.write("            ");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("<!DOCTYPE html>\n");
-      out.write("<html>\n");
-      out.write("    <head>\n");
       out.write("        <meta charset=\"UTF-8\">\n");
       out.write("        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n");
       out.write("        <title>Library Management System</title>\n");
@@ -93,41 +70,6 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        </div>\n");
       out.write("    </body>\n");
       out.write("</html>\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("            <!-- Main Content -->\n");
-      out.write("            <div style=\"flex-grow: 1; padding: 20px; background-color: #f5f6fa;\">\n");
-      out.write("                <div style=\"margin-bottom: 20px;\">\n");
-      out.write("                    <img src=\"../images/BGimage.jpeg\" style=\"width: 100%; height: 300px; object-fit: cover; border-radius: 8px;\">\n");
-      out.write("                </div>\n");
-      out.write("\n");
-      out.write("                <!-- Dashboard Cards -->\n");
-      out.write("                <div style=\"display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;\">\n");
-      out.write("                    <div style=\"background-color: #3498db; color: white; padding: 20px; border-radius: 8px;\">\n");
-      out.write("                        <h3 style=\"margin: 0;\">Total Books</h3>\n");
-      out.write("                        <p style=\"font-size: 24px; margin: 10px 0;\">1,234</p>\n");
-      out.write("                    </div>\n");
-      out.write("                    <div style=\"background-color: #2ecc71; color: white; padding: 20px; border-radius: 8px;\">\n");
-      out.write("                        <h3 style=\"margin: 0;\">Available Books</h3>\n");
-      out.write("                        <p style=\"font-size: 24px; margin: 10px 0;\">1,100</p>\n");
-      out.write("                    </div>\n");
-      out.write("                    <div style=\"background-color: #e74c3c; color: white; padding: 20px; border-radius: 8px;\">\n");
-      out.write("                        <h3 style=\"margin: 0;\">Borrowed Books</h3>\n");
-      out.write("                        <p style=\"font-size: 24px; margin: 10px 0;\">134</p>\n");
-      out.write("                    </div>\n");
-      out.write("                    <div style=\"background-color: #f1c40f; color: white; padding: 20px; border-radius: 8px;\">\n");
-      out.write("                        <h3 style=\"margin: 0;\">Total Members</h3>\n");
-      out.write("                        <p style=\"font-size: 24px; margin: 10px 0;\">567</p>\n");
-      out.write("                    </div>\n");
-      out.write("                </div>\n");
-      out.write("            </div>\n");
-      out.write("        </div>\n");
-      out.write("\n");
-      out.write("        <footer style=\"background-color: #2c3e50; color: white; text-align: center; padding: 15px;\">\n");
-      out.write("            Library System © All rights reserved 2025\n");
-      out.write("        </footer>\n");
-      out.write("    </body>\n");
-      out.write("</html>");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

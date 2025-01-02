@@ -26,7 +26,7 @@
                 <a href="account.jsp" style="color: white; text-decoration: none; padding: 10px; margin: 5px 0;">Accounts</a>
                 <a href="book.jsp" style="color: white; text-decoration: none; padding: 10px; margin: 5px 0;">Books</a>
                 <a href="transaction.jsp" style="color: white; text-decoration: none; padding: 10px; margin: 5px 0;">Transactions</a>
-                <a href="settings.html" style="color: white; text-decoration: none; padding: 10px; margin: 5px 0;">Settings</a>
+                <a href="setting.jsp" style="color: white; text-decoration: none; padding: 10px; margin: 5px 0;">Settings</a>
             </div>
         </div>
     </body>
