@@ -13,7 +13,7 @@
         <link href="style.css" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
         <style>
-            /* General styles for the sidebar */
+           
             .nav-link {
                 color: white;
                 text-decoration: none;
@@ -23,13 +23,13 @@
                 border-radius: 4px;
             }
 
-            /* Remove white background on hover */
+           
             .nav-link:hover {
-                background-color: #3b4b5c; /* Darker shade for hover */
+                background-color: #3b4b5c; 
                 color: white;
             }
 
-            /* Active link styling */
+            
             .active-link {
                 background-color: #2c3e50 !important;
                 font-weight: bold;

@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Accounts - Library Management System</title>
+    <title>User Accounts - Library Management System</title>
 </head>
 <body style="margin: 0; font-family: Arial, sans-serif;">
     <nav style="background-color: #2c3e50; padding: 15px; color: white;">
