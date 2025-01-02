@@ -59,8 +59,12 @@
                             <td style="padding: 12px; border-bottom: 1px solid #ddd;">Admin1234</td>
                             <td style="padding: 12px; border-bottom: 1px solid #ddd;">Admin</td>
                             <td style="padding: 12px; border-bottom: 1px solid #ddd;">
-                                <button style="background-color: #3498db; color: white; border: none; padding: 5px 10px; border-radius: 4px; margin-right: 5px; cursor: pointer;">Edit</button>
-                                <button style="background-color: #e74c3c; color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer;">Delete</button>
+                               <button style="background-color: #3498db; color: white; border: none; padding: 5px 10px; border-radius: 4px; margin-right: 5px; cursor: pointer;">
+                                        <a href="admin_edit.jsp?adminId=A001" style="color: white; text-decoration: none;">Edit</a>
+                                    </button>
+                                    <button style="background-color: #e74c3c; color: white; border: none; padding: 5px 10px; border-radius: 4px; margin-right: 5px; cursor: pointer;">
+                                        <a href="admin_delete.jsp?adminId=A001" style="color: white; text-decoration: none;">Delete</a>
+                                    </button>
                             </td>
                         
                         
