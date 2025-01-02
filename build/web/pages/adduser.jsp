@@ -23,7 +23,7 @@
         <div style="flex-grow: 1; padding: 20px; background-color: #f5f6fa;">
             <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
                 <h2 style="margin: 0;">Add New User</h2>
-                <a href="account.jsp" style="background-color: #7f8c8d; color: white; text-decoration: none; padding: 10px 20px; border-radius: 4px;">Back to Accounts</a>
+                <a href="user_account.jsp" style="background-color: #7f8c8d; color: white; text-decoration: none; padding: 10px 20px; border-radius: 4px;">Back to User Accounts</a>
             </div>
 
             <div style="background-color: white; padding: 20px; border-radius: 8px;">

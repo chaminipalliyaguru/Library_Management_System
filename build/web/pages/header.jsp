@@ -52,8 +52,8 @@
                     <a href="#" class="nav-link" id="accountsLink" 
                        data-bs-toggle="collapse" data-bs-target="#accountsMenu" aria-expanded="false" aria-controls="accountsMenu">Accounts</a>
                     <div id="accountsMenu" class="collapse submenu">
-                        <a href="account.jsp" class="nav-link">Student</a>
-                        <a href="admin.jsp" class="nav-link">Admin</a>
+                        <a href="user_account.jsp" class="nav-link">Student</a>
+                        <a href="admin_account.jsp" class="nav-link">Admin</a>
                     </div>
                 </div>
                 <a href="book.jsp" class="nav-link" id="booksLink">Books</a>
