@@ -19,6 +19,8 @@
 
     <div style="display: flex; min-height: calc(100vh - 120px);">
         <%@include file="header.jsp" %>
+        
+        
 
         <div style="flex-grow: 1; padding: 20px; background-color: #f5f6fa;">
             <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
