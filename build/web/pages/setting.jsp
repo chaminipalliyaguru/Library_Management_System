@@ -186,46 +186,9 @@
                         <label for="fine-rate">Late Return Fine Rate (per day)</label>
                         <input type="number" id="fine-rate" value="1">
                     </div>
-                </div>
+                
 
-                <div class="settings-section">
-                    <h2>Notification Settings</h2>
-                    <div class="form-group">
-                        <label>Email Notifications</label>
-                        <label class="toggle-switch">
-                            <input type="checkbox" checked>
-                            <span class="slider"></span>
-                        </label>
-                    </div>
-                    <div class="form-group">
-                        <label>SMS Notifications</label>
-                        <label class="toggle-switch">
-                            <input type="checkbox">
-                            <span class="slider"></span>
-                        </label>
-                    </div>
-                </div>
-
-                <div class="settings-section">
-                    <h2>System Settings</h2>
-                    <div class="form-group">
-                        <label for="language">System Language</label>
-                        <select id="language">
-                            <option value="en">English</option>
-                            <option value="es">Spanish</option>
-                            <option value="fr">French</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="timezone">Timezone</label>
-                        <select id="timezone">
-                            <option value="UTC">UTC</option>
-                            <option value="EST">EST</option>
-                            <option value="PST">PST</option>
-                        </select>
-                    </div>
-                </div>
-
+               
                 <button type="submit" class="btn">Save Settings</button>
             </form>
         </div>
