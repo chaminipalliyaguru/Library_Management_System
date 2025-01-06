@@ -126,21 +126,21 @@
             }
 
             button.btn {
-            background-color: #2196F3;
-            color: white;
-            padding: 12px 24px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s;
-            display: inline-block;
-            margin-top: 20px;
-        }
+                background-color: #2196F3;
+                color: white;
+                padding: 12px 24px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 16px;
+                transition: background-color 0.3s;
+                display: inline-block;
+                margin-top: 20px;
+            }
 
-        button.btn:hover {
-            background-color: #1976D2;
-        }
+            button.btn:hover {
+                background-color: #1976D2;
+            }
         </style>
     </head>
     <body style="margin: 0; font-family: Arial, sans-serif;">
@@ -156,83 +156,53 @@
 
 
             <div class="container">
-        <div class="settings-header">
-            <h1>Library Management System Settings</h1>
+                <div class="settings-header">
+                    <h1>Library Management System Settings</h1>
+                </div>
+                <div class="settings-content">
+                    <form>
+                        <div class="settings-section">
+                            <h2>General Settings</h2>
+                            <div class="form-group">
+                                <label for="library-name">Library Name</label>
+                                <input type="text" id="library-name" value="Central Library">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="max-books">Maximum Books Per User</label>
+                                <input type="number" id="max-books" value="5">
+                            </div>
+                            <div class="form-group">
+                                <label for="fine-rate">Late Return Fine Rate (per day)</label>
+                                <input type="number" id="fine-rate" value="1">
+                            </div>
+                        </div>
+                                                <button type="submit" class="btn">Save Settings</button>
+
+                        
+                                                <div class="settings-section"><br><br>
+                            <h2>Profile Settings</h2>
+                            <div class="form-group">
+                                <label for="library-name">Admin Name</label>
+                                <input type="text" id="library-name" value="B.C.Perera">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="max-books">Change Password</label>
+                                <input type="number" id="max-books" value="5">
+                            </div>
+                                                    <button type="submit" class="btn">Save Settings</button>
+
+                                                    <button style="background-color:red" type="submit" class="btn">Sign Out</button>
+
+                        </div>
+
+                    </form>
+                </div>
+            </div>
         </div>
-        <div class="settings-content">
-            <form>
-                <div class="settings-section">
-                    <h2>General Settings</h2>
-                    <div class="form-group">
-                        <label for="library-name">Library Name</label>
-                        <input type="text" id="library-name" value="Central Library">
-                    </div>
-                    <div class="form-group">
-                        <label for="admin-email">Administrator Email</label>
-                        <input type="email" id="admin-email" value="admin@library.com">
-                    </div>
-                </div>
-
-               
-                    <div class="form-group">
-                        <label for="loan-period">Administrator Password</label>
-                        <input type="number" id="loan-period" value="14">
-                    </div>
-                    <div class="form-group">
-                        <label for="max-books">Maximum Books Per User</label>
-                        <input type="number" id="max-books" value="5">
-                    </div>
-                    <div class="form-group">
-                        <label for="fine-rate">Late Return Fine Rate (per day)</label>
-                        <input type="number" id="fine-rate" value="1">
-                    </div>
-                </div>
-
-                <div class="settings-section">
-                    <h2>Notification Settings</h2>
-                    <div class="form-group">
-                        <label>Email Notifications</label>
-                        <label class="toggle-switch">
-                            <input type="checkbox" checked>
-                            <span class="slider"></span>
-                        </label>
-                    </div>
-                    <div class="form-group">
-                        <label>SMS Notifications</label>
-                        <label class="toggle-switch">
-                            <input type="checkbox">
-                            <span class="slider"></span>
-                        </label>
-                    </div>
-                </div>
-
-                <div class="settings-section">
-                    <h2>System Settings</h2>
-                    <div class="form-group">
-                        <label for="language">System Language</label>
-                        <select id="language">
-                            <option value="en">English</option>
-                            <option value="es">Spanish</option>
-                            <option value="fr">French</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="timezone">Timezone</label>
-                        <select id="timezone">
-                            <option value="UTC">UTC</option>
-                            <option value="EST">EST</option>
-                            <option value="PST">PST</option>
-                        </select>
-                    </div>
-                </div>
-
-                <button type="submit" class="btn">Save Settings</button>
-            </form>
-        </div>
-    </div>
-        </div>
-            <footer style="background-color: #2c3e50; color: white; text-align: center; padding: 15px;">
-        Library System © All rights reserved 2025
-    </footer>
+        <footer style="background-color: #2c3e50; color: white; text-align: center; padding: 15px;">
+            Library System © All rights reserved 2025
+        </footer>
     </body>
 </html>
