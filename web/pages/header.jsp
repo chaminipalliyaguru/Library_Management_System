@@ -2,6 +2,10 @@
 <%
     // Get the current page name from the request URI
     String currentPage = request.getRequestURI();
+
+    // Example administrator details (you can replace these with dynamic data)
+    String adminName = "John Doe";
+    String adminPhoto = "admin_photo.jpg"; // Ensure this image is in your project directory
 %>
 <!DOCTYPE html>
 <html>
@@ -13,7 +17,6 @@
         <link href="style.css" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
         <style>
-           
             .nav-link {
                 color: white;
                 text-decoration: none;
@@ -23,28 +26,47 @@
                 border-radius: 4px;
             }
 
-           
             .nav-link:hover {
                 background-color: #3b4b5c; 
                 color: white;
             }
 
-            
             .active-link {
                 background-color: #2c3e50 !important;
                 font-weight: bold;
             }
 
-            /* Submenu styling */
             .submenu {
                 padding-left: 20px;
+            }
+
+            .admin-section {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            .admin-photo {
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                object-fit: cover;
+                margin-bottom: 10px;
+            }
+
+            .admin-name {
+                font-size: 1.2rem;
+                font-weight: bold;
             }
         </style>
     </head>
     <body>
         <div style="width: 250px; background-color: #34495e; padding: 20px; color: white;">
-            <div style="text-align: center; margin-bottom: 20px;">
-                <h3 style="margin: 10px 0;">Administrator</h3>
+            <div class="admin-section">
+                <!-- Display Administrator Photo -->
+                <img src="<%= adminPhoto %>" alt="Admin Photo" class="admin-photo">
+
+                <!-- Display Administrator Name -->
+                <div class="admin-name"><%= adminName %></div>
             </div>
             <div style="display: flex; flex-direction: column;">
                 <a href="home.jsp" class="nav-link" id="homeLink">Home</a>
