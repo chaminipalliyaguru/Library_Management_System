@@ -94,7 +94,7 @@
                 <img src="/Library_Management_System/images/Logo.png">
                 <h1>Login Here..</h1>
             </div>
-            <form class="login-form" action="/Library_Management_System/LoginProcess" method="POST">
+            <form class="login-form" action="pages/home.jsp" method="POST">
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" placeholder="Enter username">
 
