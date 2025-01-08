@@ -68,10 +68,10 @@
                                 <td style="padding: 12px; border-bottom: 1px solid #ddd;">1</td>
                                 <td style="padding: 12px; border-bottom: 1px solid #ddd;">2025-01-01</td>
                                 <td style="padding: 12px; border-bottom: 1px solid #ddd;">
-                                    <span style="background-color: #2ecc71; color: white; padding: 4px 8px; border-radius: 4px;">Active</span>
+                                    <span style="background-color: #2ecc71; color: white; padding: 4px 8px; border-radius: 4px;">Borrow</span>
                                 </td>
                                 <td style="padding: 12px; border-bottom: 1px solid #ddd;">
-                                    <button style="background-color: #2ecc71; color: white; border: none; padding: 5px 10px; border-radius: 4px; margin-right: 5px; cursor: pointer;">Return</button>
+                                    <a href="return_transaction.jsp"> <button style="background-color: #2ecc71; color: white; border: none; padding: 5px 10px; border-radius: 4px; margin-right: 5px; cursor: pointer;">Return</button></a>
                                     <button style="background-color: #3498db; color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer;">Details</button>
                                 </td>
                             </tr>

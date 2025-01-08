@@ -22,7 +22,7 @@
 
             <div style="flex-grow: 1; padding: 20px; background-color: #f5f6fa;">
                 <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
-                    <h2 style="margin: 0;">Add New User</h2>
+                    <h2 style="margin: 0;">Add New Transaction</h2>
                     <a href="transaction.jsp" style="background-color: #7f8c8d; color: white; text-decoration: none; padding: 10px 20px; border-radius: 4px;">Back to Transactions</a>
                 </div>
 
@@ -45,6 +45,14 @@
                                         <label for="date" style="display: block; margin-bottom: 5px;">Date</label>
                                         <input type="date" id="date" name="date" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;" required>
                                     </div>
+                            
+                                    <div>
+                                <label for="status" style="display: block; margin-bottom: 5px;">Status</label>
+                                <select id="status" name="status" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                                    <option value="Borrow">Borrow</option>
+                                   
+                                </select>
+                                 </div>
                             </div>
                             <div style="margin-top: 20px; text-align: right;">
                                 <button type="submit" style="background-color: #3498db; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer;">Save</button>
