@@ -73,6 +73,23 @@
                                 <td style="padding: 12px; border-bottom: 1px solid #ddd;">
                                     <a href="return_transaction.jsp"> <button style="background-color: #2ecc71; color: white; border: none; padding: 5px 10px; border-radius: 4px; margin-right: 5px; cursor: pointer;">Return</button></a>
                                     <a href="transaction_details.jsp">  <button style="background-color: #3498db; color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer;">Details</button></a>
+                                    <button 
+                                        style="background-color: #e74c3c; color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer;" 
+                                        onclick="confirmDelete('T001')">
+                                        Delete
+                                    </button>
+
+                                    <script>
+                                        function confirmDelete(T001) {
+                                            if (confirm(`Are you sure you want to delete the Transaction with ID: T001?`)) {
+                                                // Proceed with deletion (e.g., redirect to a server-side delete script)
+                                                window.location.href = `transaction.jsp`;
+                                            } else {
+                                                // User canceled the deletion
+                                                alert('Transaction deletion canceled.');
+                                            }
+                                        }
+                                    </script>
                                 </td>
                             </tr>
                         </tbody>
