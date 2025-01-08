@@ -72,7 +72,7 @@
                                 </td>
                                 <td style="padding: 12px; border-bottom: 1px solid #ddd;">
                                     <a href="return_transaction.jsp"> <button style="background-color: #2ecc71; color: white; border: none; padding: 5px 10px; border-radius: 4px; margin-right: 5px; cursor: pointer;">Return</button></a>
-                                    <button style="background-color: #3498db; color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer;">Details</button>
+                                    <a href="transaction_details.jsp">  <button style="background-color: #3498db; color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer;">Details</button></a>
                                 </td>
                             </tr>
                         </tbody>
