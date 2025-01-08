@@ -80,7 +80,7 @@
                                     </button>
 
                                     <script>
-                                        function confirmDelete(T001) {
+                                        function confirmDelete(TransactionId) {
                                             if (confirm(`Are you sure you want to delete the Transaction with ID: T001?`)) {
                                                 // Proceed with deletion (e.g., redirect to a server-side delete script)
                                                 window.location.href = `transaction.jsp`;

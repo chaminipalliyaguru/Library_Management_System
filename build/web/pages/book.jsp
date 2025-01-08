@@ -39,11 +39,11 @@
                             <select style="padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
                                 <option>All Categories</option>
                                 <option value="fiction">Fiction</option>
-                                    <option value="non-fiction">Non-fiction</option>
-                                    <option value="science">Science</option>
-                                    <option value="history">History</option>
-                                    <option value="technology">Technology</option>
-                                    <option value="others">Others</option>
+                                <option value="non-fiction">Non-fiction</option>
+                                <option value="science">Science</option>
+                                <option value="history">History</option>
+                                <option value="technology">Technology</option>
+                                <option value="others">Others</option>
                             </select>
                             <select style="padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
                                 <option>All Status</option>
@@ -85,22 +85,22 @@
                                             <a href="edit_book.jsp?id=B001" style="color: white; text-decoration: none;">Edit</a>
                                         </button>
                                         <button 
-    style="background-color: #e74c3c; color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer;" 
-    onclick="confirmDelete('B001')">
-    Delete
-</button>
-                                        
+                                            style="background-color: #e74c3c; color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer;" 
+                                            onclick="confirmDelete('B001')">
+                                            Delete
+                                        </button>
+
                                         <script>
-    function confirmDelete(bookId) {
-        if (confirm(`Are you sure you want to delete the book with ID: B001?`)) {
-            // Proceed with deletion (e.g., redirect to a server-side delete script)
-            window.location.href = `book.jsp?id`;
-        } else {
-            // User canceled the deletion
-            alert('Book deletion canceled.');
-        }
-    }
-</script>
+                                            function confirmDelete(bookId) {
+                                                if (confirm(`Are you sure you want to delete the book with ID: B001?`)) {
+                                                    // Proceed with deletion (e.g., redirect to a server-side delete script)
+                                                    window.location.href = `book.jsp?id`;
+                                                } else {
+                                                    // User canceled the deletion
+                                                    alert('Book deletion canceled.');
+                                                }
+                                            }
+                                        </script>
                                     </td>
                                 </tr>
                             </tbody>

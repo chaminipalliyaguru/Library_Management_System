@@ -3,15 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/LibraryManagementSystem/web/pages/setting.jsp</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/LibraryManagementSystem/web/pages/login.jsp</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/LibraryManagementSystem/web/pages/book.jsp</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/LibraryManagementSystem/web/pages/header.jsp</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/LibraryManagementSystem/web/index.html</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/LibraryManagementSystem/web/pages/home.jsp</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/LibraryManagementSystem/web/pages/edit_book.jsp</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/LibraryManagementSystem/web/pages/delete_book.jsp</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/LibraryManagementSystem/web/pages/add_book.jsp</file>
+            <file>file:/C:/Users/nadee/Documents/GitHub/Library_Management_System/web/pages/login.jsp</file>
+            <file>file:/C:/Users/nadee/Documents/GitHub/Library_Management_System/web/pages/return_transaction.jsp</file>
+            <file>file:/C:/Users/nadee/Documents/GitHub/Library_Management_System/web/pages/header.jsp</file>
+            <file>file:/C:/Users/nadee/Documents/GitHub/Library_Management_System/web/pages/add_transaction.jsp</file>
+            <file>file:/C:/Users/nadee/Documents/GitHub/Library_Management_System/web/pages/transaction_details.jsp</file>
+            <file>file:/C:/Users/nadee/Documents/GitHub/Library_Management_System/web/index.html</file>
+            <file>file:/C:/Users/nadee/Documents/GitHub/Library_Management_System/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/nadee/Documents/GitHub/Library_Management_System/web/pages/transaction.jsp</file>
+            <file>file:/C:/Users/nadee/Documents/GitHub/Library_Management_System/web/pages/book.jsp</file>
         </group>
     </open-files>
 </project-private>
