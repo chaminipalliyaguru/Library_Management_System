@@ -4,8 +4,8 @@
     String currentPage = request.getRequestURI();
 
     // Example administrator details (you can replace these with dynamic data)
-    String adminName = "John Doe";
-    String adminPhoto = "admin_photo.jpg"; // Ensure this image is in your project directory
+    String adminName = "Admin Johan";
+    String adminPhoto = "../images/admin_photo.png"; // Ensure this image is in your project directory
 %>
 <!DOCTYPE html>
 <html>
