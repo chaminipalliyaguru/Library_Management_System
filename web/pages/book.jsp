@@ -84,7 +84,23 @@
                                         <button style="background-color: #3498db; color: white; border: none; padding: 5px 10px; border-radius: 4px; margin-right: 5px; cursor: pointer;">
                                             <a href="edit_book.jsp?id=B001" style="color: white; text-decoration: none;">Edit</a>
                                         </button>
-                                        <button style="background-color: #e74c3c; color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer;">Delete</button>
+                                        <button 
+    style="background-color: #e74c3c; color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer;" 
+    onclick="confirmDelete('B001')">
+    Delete
+</button>
+                                        
+                                        <script>
+    function confirmDelete(bookId) {
+        if (confirm(`Are you sure you want to delete the book with ID: B001?`)) {
+            // Proceed with deletion (e.g., redirect to a server-side delete script)
+            window.location.href = `book.jsp?id`;
+        } else {
+            // User canceled the deletion
+            alert('Book deletion canceled.');
+        }
+    }
+</script>
                                     </td>
                                 </tr>
                             </tbody>
