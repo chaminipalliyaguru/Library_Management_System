@@ -92,4 +92,27 @@ public class Admin {
         return adminlist;
     }
     
+    
+    public List<Admin> searchAdmins(String search) {
+    List<Admin> adminlist = new ArrayList<>();
+    Connection con = Dbconnector.getConnection();
+    
+    String query = "SELECT * FROM admin WHERE user_name LIKE ?";
+    try {
+        PreparedStatement pstmt = con.prepareStatement(query);
+        pstmt.setString(1, "%" + search + "%");  // Search using wildcard
+        ResultSet rs = pstmt.executeQuery();
+        
+        while (rs.next()) {
+            Admin admins = new Admin(rs.getString("user_name"), rs.getString("password"), rs.getInt("admin_id"));
+            adminlist.add(admins);
+        }
+        
+    } catch (SQLException ex) {
+        Logger.getLogger(Admin.class.getName()).log(Level.SEVERE, null, ex);
+    }
+    return adminlist;
+}
+
+    
 }
