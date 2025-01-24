@@ -4,6 +4,7 @@
     Author     : nadee
 --%>
 
+<%@page import="library.classes.MD5"%>
 <%@page import="library.classes.Admin"%>
 <%
     String username = request.getParameter("username");

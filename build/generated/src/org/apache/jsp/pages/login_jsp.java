@@ -43,10 +43,24 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
 
       out.write("\r\n");
       out.write("<!DOCTYPE html>\r\n");
+      out.write("\r\n");
+
+  String message = "";  
+  if(request.getParameter("s") != null){
+      if(request.getParameter("s").equals("0")){
+          message = "<h3 style='color:red;'>Incorrect username or password</h3>";
+      }
+  }  
+
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
       out.write("<html>\r\n");
       out.write("    <head>\r\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
       out.write("        <title>Library System</title>\r\n");
+      out.write("        \r\n");
+      out.write("        \r\n");
       out.write("        <style>\r\n");
       out.write("            body {\r\n");
       out.write("                font-family: Arial, sans-serif;\r\n");
@@ -127,6 +141,8 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                width: 200px;\r\n");
       out.write("            }\r\n");
       out.write("        </style>\r\n");
+      out.write("        \r\n");
+      out.write("        \r\n");
       out.write("    </head>\r\n");
       out.write("    <body style=\"background-image: url('/Library_Management_System/images/background.jpg');\">\r\n");
       out.write("        <div class='navbar'>\r\n");
@@ -136,10 +152,13 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            <div class=\"login-container\">\r\n");
       out.write("                <img src=\"/Library_Management_System/images/Logo.png\">\r\n");
       out.write("                <h1>Login Here..</h1>\r\n");
+      out.write("                ");
+      out.print(message );
+      out.write("\r\n");
       out.write("            </div>\r\n");
-      out.write("            <form class=\"login-form\" action=\"/Library_Management_System/LoginProcess\" method=\"POST\">\r\n");
+      out.write("            <form class=\"login-form\" action=\"../pages/login_process.jsp\" method=\"POST\">\r\n");
       out.write("                <label for=\"username\">Username:</label>\r\n");
-      out.write("                <input type=\"text\" id=\"username\" name=\"username\" placeholder=\"Enter username\">\r\n");
+      out.write("                <input type=\"email\" id=\"username\" name=\"username\" placeholder=\"Enter username\" required>\r\n");
       out.write("\r\n");
       out.write("                <label for=\"password\">Password:</label>\r\n");
       out.write("                <input type=\"password\" id=\"password\" name=\"password\" placeholder=\"Enter password\">\r\n");

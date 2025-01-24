@@ -1,9 +1,22 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+
+<%
+  String message = "";  
+  if(request.getParameter("s") != null){
+      if(request.getParameter("s").equals("0")){
+          message = "<h3 style='color:red;'>Incorrect username or password</h3>";
+      }
+  }  
+%>
+
+
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Library System</title>
+        
+        
         <style>
             body {
                 font-family: Arial, sans-serif;
@@ -84,6 +97,8 @@
                 width: 200px;
             }
         </style>
+        
+        
     </head>
     <body style="background-image: url('/Library_Management_System/images/background.jpg');">
         <div class='navbar'>
@@ -93,10 +108,11 @@
             <div class="login-container">
                 <img src="/Library_Management_System/images/Logo.png">
                 <h1>Login Here..</h1>
+                <%=message %>
             </div>
-            <form class="login-form" action="pages/home.jsp" method="POST">
+            <form class="login-form" action="../pages/login_process.jsp" method="POST">
                 <label for="username">Username:</label>
-                <input type="text" id="username" name="username" placeholder="Enter username">
+                <input type="email" id="username" name="username" placeholder="Enter username" required>
 
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" placeholder="Enter password">

@@ -171,4 +171,33 @@ public class Admin {
         return false;
     }
 
+    public boolean authenticate() {
+
+        Connection con = Dbconnector.getConnection();
+
+        String query = "SELECT admin_id, password FROM admin WHERE user_name=?";
+
+
+        try {
+            PreparedStatement pstmt = con.prepareStatement(query);
+            pstmt.setString(1, username);
+            ResultSet rs = pstmt.executeQuery();
+
+            if (rs.next()) {
+                String dbpw = rs.getString("password");
+                int userid = rs.getInt("admin_id");
+
+                if (dbpw.equals(password)) {
+                    this.admin_id = userid;
+                    return true;
+                }
+            }
+
+        } catch (Exception ex) {
+            Logger.getLogger(Admin.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return false;
+    }
+
 }

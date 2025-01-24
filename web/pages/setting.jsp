@@ -177,10 +177,10 @@
                                 <input type="number" id="fine-rate" value="1">
                             </div>
                         </div>
-                                                <button type="submit" class="btn">Save Settings</button>
+                        <button type="submit" class="btn">Save Settings</button>
 
-                        
-                                                <div class="settings-section"><br><br>
+
+                        <div class="settings-section"><br><br>
                             <h2>Profile Settings</h2>
                             <div class="form-group">
                                 <label for="library-name">Admin Name</label>
@@ -191,9 +191,10 @@
                                 <label for="max-books">Change Password</label>
                                 <input type="number" id="max-books" value="5">
                             </div>
-                                                    <button type="submit" class="btn">Save Settings</button>
+                            <button type="submit" class="btn">Save Settings</button>
 
-                                                    <button style="background-color:red" type="submit" class="btn">Sign Out</button>
+                            <a href="signout.jsp" class="btn" style="background-color:red; padding:12px 24px; color:white; text-decoration:none; border-radius:4px; display:inline-block;">Sign Out</a>
+
 
                         </div>
 
