@@ -24,7 +24,7 @@
             <!-- Main Content -->
             <div style="flex-grow: 1; padding: 20px; background-color: #f5f6fa;">
                 <div style="margin-bottom: 20px;">
-                    <img src="../images/BGimage.jpeg" style="width: 100%; height: 300px; object-fit: cover; border-radius: 8px;">
+                    <img src="../images/BGimage_enhanced.jpeg" style="width: 100%; height: 300px; object-fit: cover; border-radius: 8px;">
                 </div>
 
                 <!-- Dashboard Cards -->
