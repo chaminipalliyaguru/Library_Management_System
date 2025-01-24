@@ -16,7 +16,7 @@ import java.util.logging.Logger;
  * @author nadee
  */
 public class User {
-    
+
     private int u_id;
     private String f_name;
     private String l_name;
@@ -46,6 +46,15 @@ public class User {
         this.email = email;
         this.mobile_no = mobile_no;
         this.address = address;
+    }
+
+    public User(String f_name, String l_name, String email, String mobile_no, String address, int u_id) {
+        this.f_name = f_name;
+        this.l_name = l_name;
+        this.email = email;
+        this.mobile_no = mobile_no;
+        this.address = address;
+        this.u_id = u_id;
     }
 
     public int getU_id() {
@@ -105,12 +114,12 @@ public class User {
 
             while (rs.next()) {
                 User user = new User(
-                    rs.getInt("u_id"),
-                    rs.getString("f_name"),
-                    rs.getString("l_name"),
-                    rs.getString("email"),
-                    rs.getString("mobile_no"),
-                    rs.getString("address")
+                        rs.getInt("u_id"),
+                        rs.getString("f_name"),
+                        rs.getString("l_name"),
+                        rs.getString("email"),
+                        rs.getString("mobile_no"),
+                        rs.getString("address")
                 );
                 userList.add(user);
             }
@@ -124,7 +133,7 @@ public class User {
 
     public boolean updateUser() {
         Connection con = Dbconnector.getConnection();
-        String query = "UPDATE User SET t_name=?, l_name=?, email=?, mobile_no=?, address=? WHERE u_id=?";
+        String query = "UPDATE User SET f_name=?, l_name=?, email=?, mobile_no=?, address=? WHERE u_id=?";
 
         try {
             PreparedStatement pstmt = con.prepareStatement(query);
@@ -167,7 +176,7 @@ public class User {
         List<User> userList = new ArrayList<>();
         Connection con = Dbconnector.getConnection();
 
-        String query = "SELECT * FROM User WHERE t_name LIKE ? OR l_name LIKE ? OR email LIKE ?";
+        String query = "SELECT * FROM User WHERE f_name LIKE ? OR l_name LIKE ? OR email LIKE ?";
         try {
             PreparedStatement pstmt = con.prepareStatement(query);
             pstmt.setString(1, "%" + search + "%");
@@ -177,12 +186,12 @@ public class User {
             ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
                 User user = new User(
-                    rs.getInt("u_id"),
-                    rs.getString("t_name"),
-                    rs.getString("l_name"),
-                    rs.getString("email"),
-                    rs.getString("mobile_no"),
-                    rs.getString("address")
+                        rs.getInt("u_id"),
+                        rs.getString("f_name"),
+                        rs.getString("l_name"),
+                        rs.getString("email"),
+                        rs.getString("mobile_no"),
+                        rs.getString("address")
                 );
                 userList.add(user);
             }
@@ -204,7 +213,7 @@ public class User {
 
             ResultSet rs = pstmt.executeQuery();
             if (rs.next()) {
-                this.f_name = rs.getString("t_name");
+                this.f_name = rs.getString("f_name");
                 this.l_name = rs.getString("l_name");
                 this.email = rs.getString("email");
                 this.mobile_no = rs.getString("mobile_no");

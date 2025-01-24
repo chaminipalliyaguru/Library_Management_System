@@ -1,9 +1,4 @@
-<%-- 
-    Document   : edituser
-    Created on : Jan 2, 2025
-    Author     : User
---%>
-
+<%@page import="library.classes.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -26,34 +21,39 @@
                 <a href="user_account.jsp" style="background-color: #7f8c8d; color: white; text-decoration: none; padding: 10px 20px; border-radius: 4px;">Back to User Accounts</a>
             </div>
 
+            <%
+                int userId = Integer.parseInt(request.getParameter("userId"));
+                User user = new User(userId);
+                user.getUserById();
+            %>
+
             <div style="background-color: white; padding: 20px; border-radius: 8px;">
-                <form action="edituseraction.jsp" method="post">
+                <form action="edit_user_process.jsp" method="post">
+                    <input type="hidden" name="userId" value="<%= user.getU_id() %>">
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
                         <div>
                             <label for="firstName" style="display: block; margin-bottom: 5px;">First Name</label>
-                            <input type="text" id="firstName" name="firstName" value="Nadeesh" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                            <input type="text" id="firstName" name="firstName" value="<%= user.getF_name() %>" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
                         </div>
                         <div>
                             <label for="lastName" style="display: block; margin-bottom: 5px;">Last Name</label>
-                            <input type="text" id="lastName" name="lastName" value="Malaka" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                            <input type="text" id="lastName" name="lastName" value="<%= user.getL_name() %>" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
                         </div>
                         <div>
                             <label for="email" style="display: block; margin-bottom: 5px;">Email</label>
-                            <input type="email" id="email" name="email" value="nadee@example.com" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                            <input type="email" id="email" name="email" value="<%= user.getEmail() %>" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
                         </div>
                         <div>
                             <label for="address" style="display: block; margin-bottom: 5px;">Address</label>
-                            <input type="text" id="address" name="address" value="Piliyandala" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                            <input type="text" id="address" name="address" value="<%= user.getAddress() %>" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
                         </div>
-                        
                         <div>
                             <label for="mobile" style="display: block; margin-bottom: 5px;">Mobile No</label>
-                            <input type="text" id="mobile" name="mobile" value="0774902773" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                            <input type="text" id="mobile" name="mobile" value="<%= user.getMobile_no() %>" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
                         </div>
                     </div>
                     <div style="margin-top: 20px; text-align: right;">
-                        <button type="submit" style="background-color: #3498db; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer;">Save</button>
-                        <button type="reset" style="background-color: #e74c3c; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer;">Reset</button>
+                        <button type="submit" style="background-color: #3498db; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer;">Save Changes</button>
                     </div>
                 </form>
             </div>

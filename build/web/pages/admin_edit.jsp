@@ -36,7 +36,7 @@
             %>
 
             <div style="background-color: white; padding: 20px; border-radius: 8px;">
-                <form action="edit_user_process.jsp?adminId=<%=admin.getAdmin_id()%>" method="post">
+                <form action="edit_admin_process.jsp?adminId=<%=admin.getAdmin_id()%>" method="post">
                     <input type="hidden" name="adminId" value="Admin">
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
                         <div>

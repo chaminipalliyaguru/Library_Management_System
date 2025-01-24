@@ -1,30 +1,24 @@
 <%-- 
     Document   : edit_user_process
-    Created on : Jan 24, 2025, 3:30:12 PM
+    Created on : Jan 24, 2025, 7:38:25 PM
     Author     : nadee
 --%>
 
-<%@page import="library.classes.Admin"%>
+<%@page import="library.classes.User"%>
 <%
-    int adminid = Integer.parseInt(request.getParameter("adminId"));
-    String username = request.getParameter("username");
-    String password = request.getParameter("password");
-    
-   Admin admin = new Admin(username, password, adminid);
-   
-   if(admin.updateadmin()){
-       response.sendRedirect("admin_account.jsp?s=2");
-   }else{
-        response.sendRedirect("admin_account.jsp?s=1");
-   }
-   
-    
-    
+    int userId = Integer.parseInt(request.getParameter("userId"));
+    String firstName = request.getParameter("firstName");
+    String lastName = request.getParameter("lastName");
+    String email = request.getParameter("email");
+    String address = request.getParameter("address");
+    String mobile = request.getParameter("mobile");
     
 
+    User user = new User(firstName, lastName, email, mobile, address, userId);
 
-
-
-
-
+    if (user.updateUser()) {
+        response.sendRedirect("user_account.jsp?s=2"); // Update successful
+    } else {
+        response.sendRedirect("user_account.jsp?s=1"); // Update failed
+    }
 %>

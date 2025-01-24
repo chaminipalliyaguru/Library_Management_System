@@ -120,8 +120,8 @@ public class Admin {
 
             ResultSet rs = pstmt.executeQuery();
             if (rs.next()) {
-                this.username = rs.getString("user_name");  // Correct
-                this.password = rs.getString("password");   // Fixed here
+                this.username = rs.getString("user_name");   
+                this.password = rs.getString("password");    
             }
         } catch (SQLException ex) {
             Logger.getLogger(Admin.class.getName()).log(Level.SEVERE, null, ex);
