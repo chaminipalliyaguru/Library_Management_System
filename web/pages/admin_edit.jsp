@@ -4,6 +4,7 @@
     Author     : nadee
 --%>
 
+<%@page import="library.classes.Admin"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -25,18 +26,26 @@
                 <h2 style="margin: 0;">Edit Admin</h2>
                 <a href="admin_account.jsp" style="background-color: #7f8c8d; color: white; text-decoration: none; padding: 10px 20px; border-radius: 4px;">Back to Admin Accounts</a>
             </div>
+            
+            <%
+                
+             int admin_id = Integer.parseInt(request.getParameter("adminId"));
+             Admin admin  = new Admin(admin_id);
+             admin.getAdmin();
+                
+            %>
 
             <div style="background-color: white; padding: 20px; border-radius: 8px;">
-                <form action="editadminaction.jsp" method="post">
+                <form action="edit_user_process.jsp?adminId=<%=admin.getAdmin_id()%>" method="post">
                     <input type="hidden" name="adminId" value="Admin">
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
                         <div>
                             <label for="userName" style="display: block; margin-bottom: 5px;">User Name</label>
-                            <input type="text" id="userName" name="userName" value="Admin" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                            <input type="text" id="userName" name="username" value="<%=admin.getUsername()%>" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
                         </div>
                         <div>
                             <label for="password" style="display: block; margin-bottom: 5px;">Password</label>
-                            <input type="text" id="password" name="password" value="Admin1234" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                            <input type="text" id="password" name="password" value="<%=admin.getPassword()%>" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
                         </div>
                     </div>
                     <div style="margin-top: 20px; text-align: right;">
