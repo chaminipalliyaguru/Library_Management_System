@@ -149,10 +149,26 @@ public class Admin {
             Logger.getLogger(Admin.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-                
-        
-        
         return true;
+    }
+    
+    public boolean deleteAdmin() {
+
+        Connection con = Dbconnector.getConnection();
+
+        String query = "DELETE FROM admin WHERE admin_id=?";
+        try {
+            PreparedStatement pstmt = con.prepareStatement(query);
+            pstmt.setInt(1, admin_id);
+
+            int a = pstmt.executeUpdate();
+            return a > 0;
+
+        } catch (Exception ex) {
+            Logger.getLogger(Admin.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return false;
     }
 
 }

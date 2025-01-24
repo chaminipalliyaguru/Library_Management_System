@@ -19,16 +19,27 @@
         %>
         <script>
             <% if ("0".equals(status)) { %>
-        window.alert("Successfully added admin");
+            window.alert("Successfully added admin");
             <% } else if ("2".equals(status)) { %>
-        window.alert("Successfully updated admin");
+            window.alert("Successfully updated admin");
+            <% } else if ("3".equals(status)) { %>
+            window.alert("Successfully delete admin");
             <% } else { %>
-        window.alert("Error occurred");
+            window.alert("Error occurred");
             <% } %>
         </script>
         <%
             }
         %>
+
+        <script>
+            function confirmDelete(adminId) {
+                if (confirm("Are you sure you want to delete this admin? This action cannot be undone.")) {
+                    window.location.href = 'admin_delete.jsp?adminId=' + adminId;
+                }
+            }
+        </script>
+
 
 
     </head>
@@ -97,8 +108,10 @@
                                     <button style="background-color: #3498db; color: white; border: none; padding: 5px 10px; border-radius: 4px; margin-right: 5px; cursor: pointer;">
                                         <a href="admin_edit.jsp?adminId=<%= list.getAdmin_id()%>" style="color: white; text-decoration: none;">Edit</a>
                                     </button>
-                                    <button style="background-color: #e74c3c; color: white; border: none; padding: 5px 10px; border-radius: 4px; margin-right: 5px; cursor: pointer;">
-                                        <a href="admin_delete.jsp?adminId=<%= list.getAdmin_id()%>" style="color: white; text-decoration: none;">Delete</a>
+                                    <button 
+                                        style="background-color: #e74c3c; color: white; border: none; padding: 5px 10px; border-radius: 4px; margin-right: 5px; cursor: pointer;" 
+                                        onclick="confirmDelete(<%= list.getAdmin_id()%>)">
+                                        Delete
                                     </button>
                                 </td>
                             </tr>
