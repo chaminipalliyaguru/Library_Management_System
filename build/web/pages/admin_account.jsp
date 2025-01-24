@@ -4,11 +4,29 @@
     Author     : nadee
 --%>
 
+<%@page import="java.util.List"%>
+<%@page import="library.classes.Admin"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+
 <html>
 <head>
     <title>Admin Accounts - Library Management System</title>
+    
+    <%
+   if (request.getParameter("s") != null) {
+%>
+   <script>
+       <% if (request.getParameter("s").equals("0")) { %>
+           window.alert("Successfully added admin");
+       <% } else { %>
+           window.alert("Error occurred");
+       <% } %>
+   </script>
+<%
+   }
+%>
+
 </head>
 <body style="margin: 0; font-family: Arial, sans-serif;">
     <nav style="background-color: #2c3e50; padding: 15px; color: white;">
@@ -53,19 +71,35 @@
                         </tr>
                     </thead>
                     <tbody>
+                        
+                        
+                        <%
+                        
+                         Admin admins = new Admin();
+                         List<Admin> adminlist = admins.getAlladmins();
+                         
+                         for(Admin list : adminlist){
+                             
+                         
+                        %>
                         <tr>
-                            <td style="padding: 12px; border-bottom: 1px solid #ddd;">A001</td>
-                            <td style="padding: 12px; border-bottom: 1px solid #ddd;">Admin</td>
-                            <td style="padding: 12px; border-bottom: 1px solid #ddd;">Admin1234</td>
+                            <td style="padding: 12px; border-bottom: 1px solid #ddd;">A0<%=list.getAdmin_id()%></td>
+                            <td style="padding: 12px; border-bottom: 1px solid #ddd;"><%=list.getUsername()%></td>
+                            <td style="padding: 12px; border-bottom: 1px solid #ddd;"><%=list.getPassword()%></td>
                             <td style="padding: 12px; border-bottom: 1px solid #ddd;">Admin</td>
                             <td style="padding: 12px; border-bottom: 1px solid #ddd;">
                                <button style="background-color: #3498db; color: white; border: none; padding: 5px 10px; border-radius: 4px; margin-right: 5px; cursor: pointer;">
-                                        <a href="admin_edit.jsp?adminId=A001" style="color: white; text-decoration: none;">Edit</a>
+                                        <a href="admin_edit.jsp?adminId=<%=list.getAdmin_id()%>" style="color: white; text-decoration: none;">Edit</a>
                                     </button>
                                     <button style="background-color: #e74c3c; color: white; border: none; padding: 5px 10px; border-radius: 4px; margin-right: 5px; cursor: pointer;">
-                                        <a href="admin_delete.jsp?adminId=A001" style="color: white; text-decoration: none;">Delete</a>
+                                        <a href="admin_delete.jsp?adminId=<%=list.getAdmin_id()%>" style="color: white; text-decoration: none;">Delete</a>
                                     </button>
                             </td>
+                        <%
+                        
+                        }
+                        
+                        %>
                         
                         
                     </tbody>
