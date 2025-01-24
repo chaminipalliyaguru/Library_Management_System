@@ -27,7 +27,7 @@
             </div>
 
             <div style="background-color: white; padding: 20px; border-radius: 8px;">
-                <form action="adduseraction.jsp" method="post">
+                <form action="register_user_process.jsp" method="post">
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
                         <div>
                             <label for="firstName" style="display: block; margin-bottom: 5px;">First Name</label>

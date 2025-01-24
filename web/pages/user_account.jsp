@@ -9,6 +9,26 @@
 <html>
     <head>
         <title>User Accounts - Library Management System</title>
+        
+         <%
+            String status = request.getParameter("s");
+            if (status != null) {
+        %>
+        <script>
+            <% if ("0".equals(status)) { %>
+            window.alert("Successfully added User");
+            <% } else if ("2".equals(status)) { %>
+            window.alert("Successfully updated User");
+            <% } else if ("3".equals(status)) { %>
+            window.alert("Successfully delete User");
+            <% } else { %>
+            window.alert("Error occurred");
+            <% } %>
+        </script>
+        <%
+            }
+        %>
+
     </head>
     <body style="margin: 0; font-family: Arial, sans-serif;">
         <nav style="background-color: #2c3e50; padding: 15px; color: white;">
