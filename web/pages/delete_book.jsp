@@ -1,17 +1,22 @@
 <%-- 
     Document   : delete_book
-    Created on : Jan 4, 2025, 10:54:45 PM
+    Created on : Jan 27, 2025
     Author     : Chathu
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <h1>Hello World!</h1>
-    </body>
-</html>
+<%@ page import="library.classes.Book" %>
+<%
+    String bookIdStr = request.getParameter("bookId");
+    if (bookIdStr != null) {
+        int bookId = Integer.parseInt(bookIdStr);
+        Book book = new Book(bookId);
+        boolean success = book.deleteBook();
+        if (success) {
+            response.sendRedirect("book.jsp?s=3");
+        } else {
+            response.sendRedirect("book.jsp?s=1");
+        }
+    } else {
+        response.sendRedirect("book.jsp?s=1");
+    }
+%>

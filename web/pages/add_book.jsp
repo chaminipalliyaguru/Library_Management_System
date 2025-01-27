@@ -1,6 +1,6 @@
 <%-- 
     Document   : add_book
-    Created on : Jan 5, 2025
+    Created on : Jan 27, 2025
     Author     : chathuranga
 --%>
 
@@ -57,6 +57,15 @@
                             <div>
                                 <label for="qty" style="display: block; margin-bottom: 5px;">Quantity</label>
                                 <input type="number" min="1" id="qty"  name="qty" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                            </div>
+                            <div>
+                                <label for="status" style="display: block; margin-bottom: 5px;">Status</label>
+                                <select id="status" name="status" required>
+                                    <option value="" disabled selected>Select an status</option>
+                                    <option value="Available">Available</option>
+                                    <option value="Not-Available">Not-Available</option>
+                                    <option value="Pending">Pending</option>
+                                </select>
                             </div>
                         </div>
                         <div style="margin-top: 20px; text-align: right;">
