@@ -59,8 +59,8 @@
                                 <input type="number" min="1" id="qty"  name="qty" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
                             </div>
                             <div>
-                                <label for="status" style="display: block; margin-bottom: 5px;">Status</label>
-                                <select id="status" name="status" required>
+                                <label for="bookstatus" style="display: block; margin-bottom: 5px;">Status</label>
+                                <select id="bookstatus" name="bookstatus" required>
                                     <option value="" disabled selected>Select an status</option>
                                     <option value="Available">Available</option>
                                     <option value="Not-Available">Not-Available</option>

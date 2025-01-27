@@ -23,7 +23,7 @@ public class Book {
     private String description;
     private String category;
     private int qty;
-    private String status;
+    private String bookstatus;
 
     public Book() {
     }
@@ -32,32 +32,32 @@ public class Book {
         this.book_id = book_id;
     }
 
-    public Book(String title, String author, String description, String category, int qty, String status) {
+    public Book(String title, String author, String description, String category, int qty, String bookstatus) {
         this.title = title;
         this.author = author;
         this.description = description;
         this.category = category;
         this.qty = qty;
-        this.status = status;
+        this.bookstatus = bookstatus;
     }
 
-    public Book(int book_id, String title, String author, String description, String category, int qty, String status) {
+    public Book(int book_id, String title, String author, String description, String category, int qty, String bookstatus) {
         this.book_id = book_id;
         this.title = title;
         this.author = author;
         this.description = description;
         this.category = category;
         this.qty = qty;
-        this.status = status;
+        this.bookstatus = bookstatus;
     }
 
-    public Book(String title, String author, String description, String category, int qty, String status, int book_id) {
+    public Book(String title, String author, String description, String category, int qty, String bookstatus, int book_id) {
         this.title = title;
         this.author = author;
         this.description = description;
         this.category = category;
         this.qty = qty;
-        this.status = status;
+        this.bookstatus = bookstatus;
         this.book_id = book_id;
     }
 
@@ -85,13 +85,13 @@ public class Book {
         return qty;
     }
 
-    public String getStatus() {
-        return status;
+    public String getBookstatus() {
+        return bookstatus;
     }
 
     public boolean addbook() {
         Connection con = Dbconnector.getConnection();
-        String query = "INSERT INTO Book (title, author,description, category, qty, status) VALUES (?,?,?,?,?,?)";
+        String query = "INSERT INTO Book (title, author,description, category, qty, bookstatus) VALUES (?,?,?,?,?,?)";
 
         try {
             PreparedStatement pstmt = con.prepareStatement(query);
@@ -100,7 +100,7 @@ public class Book {
             pstmt.setString(3, description);
             pstmt.setString(4, category);
             pstmt.setInt(5, qty);
-            pstmt.setString(6, status);
+            pstmt.setString(6, bookstatus);
 
             int a = pstmt.executeUpdate();
             return a > 0;
@@ -129,7 +129,7 @@ public class Book {
                         rs.getString("description"),
                         rs.getString("category"),
                         rs.getInt("qty"),
-                        rs.getString("status")
+                        rs.getString("bookstatus")
                 );
                 bookList.add(book);
             }
@@ -143,7 +143,7 @@ public class Book {
 
     public boolean updateBook() {
         Connection con = Dbconnector.getConnection();
-        String query = "UPDATE Book SET title=?, author=?, description=?, category=?, qty=?, status=? WHERE book_id=?";
+        String query = "UPDATE Book SET title=?, author=?, description=?, category=?, qty=?, bookstatus=? WHERE book_id=?";
 
         try {
             PreparedStatement pstmt = con.prepareStatement(query);
@@ -152,7 +152,7 @@ public class Book {
             pstmt.setString(3, description);
             pstmt.setString(4, category);
             pstmt.setInt(5, qty);
-            pstmt.setString(6, status);
+            pstmt.setString(6, bookstatus);
             pstmt.setInt(7, book_id);
 
             int a = pstmt.executeUpdate();
@@ -183,38 +183,95 @@ public class Book {
         return false;
     }
 
-    public List<Book> searchBooks(String search) {
-        List<Book> bookList = new ArrayList<>();
-        Connection con = Dbconnector.getConnection();
+    public List<Book> getAllBooks(String category, String bookstatus) {
+    List<Book> bookList = new ArrayList<>();
+    Connection con = Dbconnector.getConnection();
+    StringBuilder query = new StringBuilder("SELECT * FROM Book WHERE 1=1");
 
-        String query = "SELECT * FROM Book WHERE title LIKE ? OR author LIKE ? OR category LIKE ? OR status LIKE ?";
-        try {
-            PreparedStatement pstmt = con.prepareStatement(query);
-            pstmt.setString(1, "%" + search + "%");
-            pstmt.setString(2, "%" + search + "%");
-            pstmt.setString(3, "%" + search + "%");
-            pstmt.setString(4, "%" + search + "%");
+    // Append filters based on category and status
+    if (category != null && !category.isEmpty()) {
+        query.append(" AND category = ?");
+    }
+    if (bookstatus != null && !bookstatus.equals("All")) {
+        query.append(" AND bookstatus = ?");
+    }
 
-            ResultSet rs = pstmt.executeQuery();
-            while (rs.next()) {
-                Book book = new Book(
-                        rs.getInt("book_id"),
-                        rs.getString("title"),
-                        rs.getString("author"),
-                        rs.getString("description"),
-                        rs.getString("category"),
-                        rs.getInt("qty"),
-                        rs.getString("status")
-                );
-                bookList.add(book);
-            }
+    try {
+        PreparedStatement pstmt = con.prepareStatement(query.toString());
 
-        } catch (SQLException ex) {
-            Logger.getLogger(Book.class.getName()).log(Level.SEVERE, null, ex);
+        int index = 1;
+        // Set parameters for category and status
+        if (category != null && !category.isEmpty()) {
+            pstmt.setString(index++, category);
+        }
+        if (bookstatus != null && !bookstatus.equals("All")) {
+            pstmt.setString(index++, bookstatus);
         }
 
-        return bookList;
+        ResultSet rs = pstmt.executeQuery();
+        while (rs.next()) {
+            Book book = new Book(
+                rs.getInt("book_id"),
+                rs.getString("title"),
+                rs.getString("author"),
+                rs.getString("description"),
+                rs.getString("category"),
+                rs.getInt("qty"),
+                rs.getString("bookstatus")
+            );
+            bookList.add(book);
+        }
+    } catch (SQLException ex) {
+        Logger.getLogger(Book.class.getName()).log(Level.SEVERE, null, ex);
     }
+    return bookList;
+}
+
+public List<Book> searchBooks(String search, String category, String bookstatus) {
+    List<Book> bookList = new ArrayList<>();
+    Connection con = Dbconnector.getConnection();
+    StringBuilder query = new StringBuilder("SELECT * FROM Book WHERE (title LIKE ? OR author LIKE ?)");
+
+    // Append filters based on category and status
+    if (category != null && !category.isEmpty()) {
+        query.append(" AND category = ?");
+    }
+    if (bookstatus != null && !bookstatus.equals("All")) {
+        query.append(" AND bookstatus = ?");
+    }
+
+    try {
+        PreparedStatement pstmt = con.prepareStatement(query.toString());
+        pstmt.setString(1, "%" + search + "%");
+        pstmt.setString(2, "%" + search + "%");
+
+        int index = 3; // Start setting parameters from the third position
+        if (category != null && !category.isEmpty()) {
+            pstmt.setString(index++, category);
+        }
+        if (bookstatus != null && !bookstatus.equals("All")) {
+            pstmt.setString(index++, bookstatus);
+        }
+
+        ResultSet rs = pstmt.executeQuery();
+        while (rs.next()) {
+            Book book = new Book(
+                rs.getInt("book_id"),
+                rs.getString("title"),
+                rs.getString("author"),
+                rs.getString("description"),
+                rs.getString("category"),
+                rs.getInt("qty"),
+                rs.getString("bookstatus")
+            );
+            bookList.add(book);
+        }
+    } catch (SQLException ex) {
+        Logger.getLogger(Book.class.getName()).log(Level.SEVERE, null, ex);
+    }
+    return bookList;
+}
+
 
     public Book getBookById() {
         Connection con = Dbconnector.getConnection();
@@ -231,7 +288,7 @@ public class Book {
                 this.description = rs.getString("description");
                 this.category = rs.getString("category");
                 this.qty = rs.getInt("qty");
-                this.status = rs.getString("status");
+                this.bookstatus = rs.getString("bookstatus");
 
             }
         } catch (SQLException ex) {

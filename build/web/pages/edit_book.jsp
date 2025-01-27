@@ -79,12 +79,12 @@ int bookid = Integer.parseInt(bookIdParam);
                             </div>
 
                             <div>
-                                <label for="status" style="display: block; margin-bottom: 5px;">Status</label>
-                                <select id="status" name="status" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                                <label for="bookstatus" style="display: block; margin-bottom: 5px;">Status</label>
+                                <select id="bookstatus" name="bookstatus" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
                                     <option value="" disabled selected>Select a Status</option>
-                                    <option value="Available"<%= book.getStatus().equals("Available") ? "selected" : ""%>>Available</option> 
-                                    <option value ="Not-Available"<%=book.getStatus().equals("Not-Available") ? "selected" : ""%>>Not-Available</option> 
-                                    <option value ="Pending"<%=book.getStatus().equals("Pending") ? "selected" : ""%>>Pending</option> 
+                                    <option value="Available"<%= book.getBookstatus().equals("Available") ? "selected" : ""%>>Available</option> 
+                                    <option value ="Not-Available"<%=book.getBookstatus().equals("Not-Available") ? "selected" : ""%>>Not-Available</option> 
+                                    <option value ="Pending"<%=book.getBookstatus().equals("Pending") ? "selected" : ""%>>Pending</option> 
                                 </select> 
                             </div>
 

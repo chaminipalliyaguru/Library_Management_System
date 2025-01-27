@@ -13,10 +13,10 @@
     String description = request.getParameter("description");
     String category = request.getParameter("category");
     int qty = Integer.parseInt(request.getParameter("qty"));
-    String status = request.getParameter("status");
+    String bookstatus = request.getParameter("bookstatus");
     
 
-    Book book = new Book(title, author, description, category, qty, status, bookId);
+    Book book = new Book(title, author, description, category, qty, bookstatus, bookId);
 
     if (book.updateBook()) {
         response.sendRedirect("book.jsp?s=2"); // Update successful

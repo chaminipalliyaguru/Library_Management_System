@@ -14,10 +14,10 @@
     String description = request.getParameter("description");
     String category = request.getParameter("category");
     int qty = Integer.parseInt(request.getParameter("qty")); // Get qty parameter
-    String status = request.getParameter("status");
+    String bookstatus = request.getParameter("bookstatus");
 
     // Create Book object and add it
-    Book book = new Book(title, author, description, category, qty, status);
+    Book book = new Book(title, author, description, category, qty, bookstatus);
     
     if (book.addbook()) {
         response.sendRedirect("book.jsp?s=0");
