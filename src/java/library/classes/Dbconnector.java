@@ -17,8 +17,8 @@ public class Dbconnector {
     
     private final static String DRIVER = "com.mysql.jdbc.Driver" ;
     private final static String URL = "jdbc:mysql://localhost:3306/library_system" ;
-    private final static String DBUSER = "library_user" ;
-    private final static String DBPW = "library_user" ;
+    private final static String DBUSER = "root" ;
+    private final static String DBPW = "" ;
     
     public static Connection getConnection(){
         Connection con = null;
