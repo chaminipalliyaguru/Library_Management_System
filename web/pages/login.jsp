@@ -1,32 +1,42 @@
-<%-- 
-    Document   : home
-    Created on : Dec 5, 2024, 7:18:23 AM
-    Author     : User
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+
+<%
+  String message = "";  
+  if(request.getParameter("s") != null){
+      if(request.getParameter("s").equals("0")){
+          message = "<h3 style='color:red;'>Incorrect username or password</h3>";
+      }
+  }
+
+  
+  
+%>
+
+
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Library System</title>
+        
+        
         <style>
-            body{
+            body {
                 font-family: Arial, sans-serif;
                 margin: 0;
                 padding: 0;
+                background-size: cover;
             }
 
-            .container{
+            .container {
                 margin: 150px 350px 10px 350px;
                 background-color: white;
                 display: flex;
-                align-items:left;
+                align-items: left;
                 height: 40vh;
-
             }
 
-            .navbar{
+            .navbar {
                 background-color: white;
                 padding: 10px 20px;
                 border-bottom: 1px solid #ddd;
@@ -34,7 +44,7 @@
                 align-items: center;
             }
 
-            .navbar img{
+            .navbar img {
                 height: 40px;
                 margin-right: 10px; 
             }
@@ -48,15 +58,13 @@
                 text-align: center;
             }
             
-            .login-container h1{
+            .login-container h1 {
                 margin-top: 50px;
             }
-
 
             .login-form label {
                 display: block;
                 text-align: left;
-                
                 margin-left: 60px;
                 margin-top: 30px;
                 font-size: 14px;
@@ -66,7 +74,6 @@
             .login-form input {
                 width: 100%;
                 padding: 8px;
-                
                 margin-left: 60px;
                 border: 1px solid #ccc;
                 border-radius: 4px;
@@ -89,29 +96,31 @@
                 background-color: #0056b3;
             }
             
-            .login-container img{
+            .login-container img {
                 width: 200px;
             }
-            
         </style>
+        
+        
     </head>
-    <body style="background-image: url('../images/background.jpg'); background-size: cover; ">
+    <body style="background-image: url('/Library_Management_System/images/background.jpg');">
         <div class='navbar'>
-            <img src="../images/Logo.png">
+            <img src="/Library_Management_System/images/Logo.png">
         </div>
         <div class='container'>
             <div class="login-container">
-                <img src="../images/Logo.png">
+                <img src="/Library_Management_System/images/Logo.png">
                 <h1>Login Here..</h1>
+                <%=message %>
             </div>
-            <form class="login-form">
+            <form class="login-form" action="../pages/login_process.jsp" method="POST">
                 <label for="username">Username:</label>
-                <input type="text" id="username" name="username" placeholder="Enter username">
+                <input type="email" id="username" name="username" placeholder="Enter username" required>
 
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" placeholder="Enter password">
 
-                <a href="home.jsp"><button type="submit" class="login-btn">Login</button></a>
+                <button type="submit" class="login-btn">Login</button>
             </form>
         </div>
     </body>

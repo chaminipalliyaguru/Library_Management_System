@@ -27,15 +27,15 @@
             </div>
 
             <div style="background-color: white; padding: 20px; border-radius: 8px;">
-                <form action="addadminaction.jsp" method="post">
+                <form action="register_admin_process.jsp" method="post">
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
                         <div>
                             <label for="firstName" style="display: block; margin-bottom: 5px;">User Name</label>
-                            <input type="text" id="firstName" name="firstName" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                            <input type="text" id="firstName" name="username" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
                         </div>
                         <div>
                             <label for="lastName" style="display: block; margin-bottom: 5px;">Password</label>
-                            <input type="text" id="lastName" name="lastName" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                            <input type="text" id="lastName" name="password" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
                         </div>
                     </div>
                     <div style="margin-top: 20px; text-align: right;">

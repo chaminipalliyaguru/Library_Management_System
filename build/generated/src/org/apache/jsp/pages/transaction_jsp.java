@@ -70,6 +70,10 @@ public final class transaction_jsp extends org.apache.jasper.runtime.HttpJspBase
     // Get the current page name from the request URI
     String currentPage = request.getRequestURI();
 
+    // Example administrator details (you can replace these with dynamic data)
+    String adminName = "Admin Johan";
+    String adminPhoto = "../images/admin_photo.png"; // Ensure this image is in your project directory
+
       out.write("\r\n");
       out.write("<!DOCTYPE html>\r\n");
       out.write("<html>\r\n");
@@ -81,7 +85,6 @@ public final class transaction_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <link href=\"style.css\" rel=\"stylesheet\">\r\n");
       out.write("        <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js\"></script>\r\n");
       out.write("        <style>\r\n");
-      out.write("           \r\n");
       out.write("            .nav-link {\r\n");
       out.write("                color: white;\r\n");
       out.write("                text-decoration: none;\r\n");
@@ -91,28 +94,51 @@ public final class transaction_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                border-radius: 4px;\r\n");
       out.write("            }\r\n");
       out.write("\r\n");
-      out.write("           \r\n");
       out.write("            .nav-link:hover {\r\n");
       out.write("                background-color: #3b4b5c; \r\n");
       out.write("                color: white;\r\n");
       out.write("            }\r\n");
       out.write("\r\n");
-      out.write("            \r\n");
       out.write("            .active-link {\r\n");
       out.write("                background-color: #2c3e50 !important;\r\n");
       out.write("                font-weight: bold;\r\n");
       out.write("            }\r\n");
       out.write("\r\n");
-      out.write("            /* Submenu styling */\r\n");
       out.write("            .submenu {\r\n");
       out.write("                padding-left: 20px;\r\n");
+      out.write("            }\r\n");
+      out.write("\r\n");
+      out.write("            .admin-section {\r\n");
+      out.write("                text-align: center;\r\n");
+      out.write("                margin-bottom: 20px;\r\n");
+      out.write("            }\r\n");
+      out.write("\r\n");
+      out.write("            .admin-photo {\r\n");
+      out.write("                width: 80px;\r\n");
+      out.write("                height: 80px;\r\n");
+      out.write("                border-radius: 50%;\r\n");
+      out.write("                object-fit: cover;\r\n");
+      out.write("                margin-bottom: 10px;\r\n");
+      out.write("            }\r\n");
+      out.write("\r\n");
+      out.write("            .admin-name {\r\n");
+      out.write("                font-size: 1.2rem;\r\n");
+      out.write("                font-weight: bold;\r\n");
       out.write("            }\r\n");
       out.write("        </style>\r\n");
       out.write("    </head>\r\n");
       out.write("    <body>\r\n");
       out.write("        <div style=\"width: 250px; background-color: #34495e; padding: 20px; color: white;\">\r\n");
-      out.write("            <div style=\"text-align: center; margin-bottom: 20px;\">\r\n");
-      out.write("                <h3 style=\"margin: 10px 0;\">Administrator</h3>\r\n");
+      out.write("            <div class=\"admin-section\">\r\n");
+      out.write("                <!-- Display Administrator Photo -->\r\n");
+      out.write("                <img src=\"");
+      out.print( adminPhoto );
+      out.write("\" alt=\"Admin Photo\" class=\"admin-photo\">\r\n");
+      out.write("\r\n");
+      out.write("                <!-- Display Administrator Name -->\r\n");
+      out.write("                <div class=\"admin-name\">");
+      out.print( adminName );
+      out.write("</div>\r\n");
       out.write("            </div>\r\n");
       out.write("            <div style=\"display: flex; flex-direction: column;\">\r\n");
       out.write("                <a href=\"home.jsp\" class=\"nav-link\" id=\"homeLink\">Home</a>\r\n");
@@ -140,7 +166,7 @@ public final class transaction_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            });\r\n");
       out.write("        </script>\r\n");
       out.write("    </body>\r\n");
-      out.write("</html>");
+      out.write("</html>\r\n");
       out.write("\r\n");
       out.write("\r\n");
       out.write("\r\n");
@@ -193,7 +219,7 @@ public final class transaction_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                    <span style=\"background-color: #2ecc71; color: white; padding: 4px 8px; border-radius: 4px;\">Active</span>\r\n");
       out.write("                                </td>\r\n");
       out.write("                                <td style=\"padding: 12px; border-bottom: 1px solid #ddd;\">\r\n");
-      out.write("                                    <button style=\"background-color: #2ecc71; color: white; border: none; padding: 5px 10px; border-radius: 4px; margin-right: 5px; cursor: pointer;\">Return</button>\r\n");
+      out.write("                                    <a href=\"return_transaction.jsp\"> <button style=\"background-color: #2ecc71; color: white; border: none; padding: 5px 10px; border-radius: 4px; margin-right: 5px; cursor: pointer;\">Return</button></a>\r\n");
       out.write("                                    <button style=\"background-color: #3498db; color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer;\">Details</button>\r\n");
       out.write("                                </td>\r\n");
       out.write("                            </tr>\r\n");

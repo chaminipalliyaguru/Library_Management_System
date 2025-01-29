@@ -1,0 +1,20 @@
+SMAP
+transaction_005fdetails_jsp.java
+JSP
+*S JSP
+*F
++ 0 transaction_details.jsp
+pages/transaction_details.jsp
++ 1 header.jsp
+pages/header.jsp
+*L
+5,18:49
+1#1:67,2
+4,6:71
+9,57:77
+66:134,3
+67,2:137
+69:139,3
+70,29:142
+22#0,58:170
+*E

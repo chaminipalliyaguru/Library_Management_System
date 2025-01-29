@@ -1,10 +1,13 @@
 <%-- 
-    Document   : edit_book
-    Created on : Jan 5, 2025
-    Author     : chathuranga
+    Document   : edit_book_action
+    Created on : Jan 27, 2025
+    Author     : Chathu
 --%>
 
+
+<%@page import="library.classes.Book"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -26,45 +29,76 @@
                     <a href="book.jsp" style="background-color: #7f8c8d; color: white; text-decoration: none; padding: 10px 20px; border-radius: 4px;">Back to Books</a>
                 </div>
 
+                <%                    
+                    
+                    String bookIdParam = request.getParameter("bookId");
+if (bookIdParam == null || bookIdParam.isEmpty()) {
+    // Handle the error, e.g., redirect or show an error message
+    out.println("Book ID is missing.");
+    return; // Stop further processing
+}
+int bookid = Integer.parseInt(bookIdParam);
+
+                    
+                    Book book = new Book(bookid);
+                    book.getBookById();
+                %>
+
                 <div style="background-color: white; padding: 20px; border-radius: 8px;">
-                    <form action="editbookaction.jsp" method="post">
+                    <form action="edit_book_action.jsp" method="post">
+                        <input type="hidden" name="bookId" value="<%= book.getBook_id()%>">
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
                             <div>
                                 <label for="title" style="display: block; margin-bottom: 5px;">Title</label>
-                                <input type="text" id="title" name="title" value="The Great Gatsby" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                                <input type="text" id="title" name="title" value="<%= book.getTitle()%>" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
                             </div>
                             <div>
                                 <label for="author" style="display: block; margin-bottom: 5px;">Author</label>
-                                <input type="text" id="author" name="author" value="F. Scott Fitzgerald" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                                <input type="text" id="author" name="author" value="<%= book.getAuthor()%>" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
                             </div>
                             <div>
                                 <label for="description" style="display: block; margin-bottom: 5px;">Description</label>
-                                <textarea id="description" name="description" rows="3" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">Set in the 1920s, follows millionaire Jay Gatsby’s pursuit of his lost love, Daisy Buchanan. Narrated by Nick Carraway, it explores themes of love, ambition, and the American Dream against the backdrop of the glittering yet hollow Jazz Age.</textarea>
+                                <textarea id="description" name="description" rows="3" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;"><%= book.getDescription()%></textarea>
                             </div>
                             <div>
                                 <label for="category" style="display: block; margin-bottom: 5px;">Category</label>
-                                <select id="category" name="category" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;" required>
-                                    <option value="" disabled selected>Select a category</option>
-                                    <option value="fiction" selected>Fiction</option>
-                                    <option value="non-fiction">Non-fiction</option>
-                                    <option value="science">Science</option>
-                                    <option value="history">History</option>
-                                    <option value="technology">Technology</option>
-                                    <option value="others">Others</option>
+                                <select id="category" name="category" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                                    <option value="" disabled>Select a category</option>
+                                    <option value="fiction" <%= book.getCategory().equals("fiction") ? "selected" : ""%>>Fiction</option>
+                                    <option value="non-fiction"<%= book.getCategory().equals("non-fiction") ? "selected" : ""%>>Non-fiction</option>
+                                    <option value="science"<%= book.getCategory().equals("science") ? "selected" : ""%>>Science</option>
+                                    <option value="history"<%= book.getCategory().equals("history") ? "selected" : ""%>>History</option>
+                                    <option value="technology"<%= book.getCategory().equals("technology") ? "selected" : ""%>>Technology</option>
+                                    <option value="others"<%= book.getCategory().equals("others") ? "selected" : ""%>>Others</option>
                                 </select>
                             </div>
 
                             <div>
-                                <label for="qty" style="display: block; margin-bottom: 5px;">Quantity</label>
-                                <input type="number" value="10" min="1" id="qty"  name="qty" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                                <label for="qty" style="display: block; margin-bottom: 5px;">Qty</label>
+                                <input type="number" value="<%= book.getQty()%>" min="1" id="qty" name="qty" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
                             </div>
+
+                            <div>
+                                <label for="bookstatus" style="display: block; margin-bottom: 5px;">Status</label>
+                                <select id="bookstatus" name="bookstatus" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                                    <option value="" disabled selected>Select a Status</option>
+                                    <option value="Available"<%= book.getBookstatus().equals("Available") ? "selected" : ""%>>Available</option> 
+                                    <option value ="Not-Available"<%=book.getBookstatus().equals("Not-Available") ? "selected" : ""%>>Not-Available</option> 
+                                    <option value ="Pending"<%=book.getBookstatus().equals("Pending") ? "selected" : ""%>>Pending</option> 
+                                </select> 
+                            </div>
+
                         </div>
-                        <div style="margin-top: 20px; text-align: right;">
-                            <button type="submit" style="background-color: #3498db; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer;">Save</button>
-                            <button type="reset" style="background-color: #e74c3c; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer;">Reset</button>
-                        </div>
-                    </form>
-                </div>
+
+                        <!-- Submit Button -->
+                        <div style= "margin-top :20px;text-align:right;">
+                            <!-- Save Button -->
+                            <button type= "submit" style= "background-color:#3498db;color:white;border:none;padding:10px 20px;border-radius :4px; cursor:pointer;">Save Changes
+                            </button >
+                        </div >
+                    </form >
+                </div >
+
             </div>
         </div>
 
