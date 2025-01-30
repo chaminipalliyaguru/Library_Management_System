@@ -169,6 +169,15 @@
                             </div>
 
                             <div class="form-group">
+                                <label for="contact-number">Library Contact Number</label>
+                                <input type="text" id="contact-number" value="+94 71 123 4567">
+                            </div>
+                            <div class="form-group">
+                                <label for="library-email">Library Email</label>
+                                <input type="email" id="library-email" value="central.library@gmail.com">
+                            </div>
+
+                            <div class="form-group">
                                 <label for="max-books">Maximum Books Per User</label>
                                 <input type="number" id="max-books" value="5">
                             </div>
@@ -178,25 +187,6 @@
                             </div>
                         </div>
                         <button type="submit" class="btn">Save Settings</button>
-
-
-                        <div class="settings-section"><br><br>
-                            <h2>Profile Settings</h2>
-                            <div class="form-group">
-                                <label for="library-name">Admin Name</label>
-                                <input type="text" id="library-name" value="B.C.Perera">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="max-books">Change Password</label>
-                                <input type="number" id="max-books" value="5">
-                            </div>
-                            <button type="submit" class="btn">Save Settings</button>
-
-                            <a href="signout.jsp" class="btn" style="background-color:red; padding:12px 24px; color:white; text-decoration:none; border-radius:4px; display:inline-block;">Sign Out</a>
-
-
-                        </div>
 
                     </form>
                 </div>
