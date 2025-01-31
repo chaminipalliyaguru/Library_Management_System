@@ -33,7 +33,7 @@ HTML
 CSS
 
 ### Backend:
-Java Servlets
+JSP
 
 ### Database:
 MySQL
