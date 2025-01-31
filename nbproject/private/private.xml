@@ -3,26 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Chathu/Desktop/New%20folder/Library_Management_System/web/pages/register_admin_process.jsp</file>
-            <file>file:/C:/Users/Chathu/Desktop/New%20folder/Library_Management_System/web/pages/adduser.jsp</file>
-            <file>file:/C:/Users/Chathu/Desktop/New%20folder/Library_Management_System/web/pages/login.jsp</file>
-            <file>file:/C:/Users/Chathu/Desktop/New%20folder/Library_Management_System/web/pages/home.jsp</file>
-            <file>file:/C:/Users/Chathu/Desktop/New%20folder/Library_Management_System/web/pages/admin_account.jsp</file>
-            <file>file:/C:/Users/Chathu/Desktop/New%20folder/Library_Management_System/web/pages/login_process.jsp</file>
-            <file>file:/C:/Users/Chathu/Desktop/New%20folder/Library_Management_System/web/pages/register_user_process.jsp</file>
-            <file>file:/C:/Users/Chathu/Desktop/New%20folder/Library_Management_System/src/java/library/classes/Admin.java</file>
-            <file>file:/C:/Users/Chathu/Desktop/New%20folder/Library_Management_System/src/java/library/classes/User.java</file>
-            <file>file:/C:/Users/Chathu/Desktop/New%20folder/Library_Management_System/web/pages/add_transaction.jsp</file>
-            <file>file:/C:/Users/Chathu/Desktop/New%20folder/Library_Management_System/web/pages/delete_book.jsp</file>
-            <file>file:/C:/Users/Chathu/Desktop/New%20folder/Library_Management_System/web/pages/addadmin.jsp</file>
-            <file>file:/C:/Users/Chathu/Desktop/New%20folder/Library_Management_System/web/pages/book.jsp</file>
-            <file>file:/C:/Users/Chathu/Desktop/New%20folder/Library_Management_System/web/pages/add_book.jsp</file>
-            <file>file:/C:/Users/Chathu/Desktop/New%20folder/Library_Management_System/web/pages/edit_book_action.jsp</file>
-            <file>file:/C:/Users/Chathu/Desktop/New%20folder/Library_Management_System/web/pages/edit_admin_process.jsp</file>
-            <file>file:/C:/Users/Chathu/Desktop/New%20folder/Library_Management_System/src/java/library/classes/Book.java</file>
-            <file>file:/C:/Users/Chathu/Desktop/New%20folder/Library_Management_System/src/java/library/classes/Dbconnector.java</file>
-            <file>file:/C:/Users/Chathu/Desktop/New%20folder/Library_Management_System/web/pages/addnewbook.jsp</file>
-            <file>file:/C:/Users/Chathu/Desktop/New%20folder/Library_Management_System/web/pages/edit_book.jsp</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/Library_Management_System/src/java/library/classes/Setting.java</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/Library_Management_System/web/pages/setting.jsp</file>
         </group>
     </open-files>
 </project-private>

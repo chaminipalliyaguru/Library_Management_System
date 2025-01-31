@@ -1,10 +1,5 @@
-<%-- 
-    Document   : setting
-    Created on : Jan 2, 2025, 10:50:16 AM
-    Author     : User
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="library.classes.Setting"%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -80,54 +75,9 @@
                 background-color: white;
             }
 
-            .toggle-switch {
-                position: relative;
-                display: inline-block;
-                width: 60px;
-                height: 34px;
-            }
-
-            .toggle-switch input {
-                opacity: 0;
-                width: 0;
-                height: 0;
-            }
-
-            .slider {
-                position: absolute;
-                cursor: pointer;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background-color: #ccc;
-                transition: .4s;
-                border-radius: 34px;
-            }
-
-            .slider:before {
-                position: absolute;
-                content: "";
-                height: 26px;
-                width: 26px;
-                left: 4px;
-                bottom: 4px;
-                background-color: white;
-                transition: .4s;
-                border-radius: 50%;
-            }
-
-            input:checked + .slider {
-                background-color: #2196F3;
-            }
-
-            input:checked + .slider:before {
-                transform: translateX(26px);
-            }
-
-            button.btn {
-                background-color: #2196F3;
-                color: white;
+            .btn {
+                background-color: #2c3e50;
+                color: blue;
                 padding: 12px 24px;
                 border: none;
                 border-radius: 4px;
@@ -138,61 +88,154 @@
                 margin-top: 20px;
             }
 
-            button.btn:hover {
+            .btn:hover {
                 background-color: #1976D2;
+            }
+
+            .alert {
+                padding: 15px;
+                margin-bottom: 20px;
+                border-radius: 4px;
+            }
+
+            .alert-success {
+                background-color: #d4edda;
+                color: #155724;
+                border: 1px solid #c3e6cb;
+            }
+
+            .alert-danger {
+                background-color: #f8d7da;
+                color: #721c24;
+                border: 1px solid #f5c6cb;
+            }
+
+            nav {
+                background-color: #2c3e50;
+                padding: 15px;
+                color: white;
+            }
+
+            footer {
+                background-color: #2c3e50;
+                color: white;
+                text-align: center;
+                padding: 15px;
+                position: relative;
+                bottom: 0;
+                width: 100%;
+            }
+
+            /* Added responsive design */
+            @media (max-width: 768px) {
+                .container {
+                    padding: 10px;
+                }
+
+                .settings-content {
+                    padding: 20px;
+                }
+
+                .btn {
+               width: 100%;
+            
             }
         </style>
     </head>
-    <body style="margin: 0; font-family: Arial, sans-serif;">
-        <nav style="background-color: #2c3e50; padding: 15px; color: white;">
+    <body>
+        <nav>
             <a href="home.jsp">
-                <img src="../images/Logo.png" width="175px">   
+                <img src="../images/Logo.png" width="175px" alt="Library Logo">   
             </a>
         </nav>
 
         <div style="display: flex; min-height: calc(100vh - 120px);">
             <%@include file="header.jsp" %>
 
-
+            <%
+                // Get current settings
+                Setting currentSettings = Setting.getCurrentSettings();
+                
+                // Handle form submission
+                String message = "";
+                if ("POST".equalsIgnoreCase(request.getMethod())) {
+                    try {
+                        String libraryName = request.getParameter("library-name");
+                        String contactNumber = request.getParameter("contact-number");
+                        String libraryEmail = request.getParameter("library-email");
+                        int maxBooks = Integer.parseInt(request.getParameter("max-books"));
+                        int fineRate = Integer.parseInt(request.getParameter("fine-rate"));
+                        
+                        if (Setting.updateSettings(libraryName, contactNumber, libraryEmail, maxBooks, fineRate)) {
+                            message = "Settings updated successfully!";
+                            currentSettings = Setting.getCurrentSettings(); // Refresh settings
+                        } else {
+                            message = "Error updating settings. Please try again.";
+                        }
+                    } catch (NumberFormatException e) {
+                        message = "Please enter valid numbers for maximum books and fine rate.";
+                    }
+                }
+            %>
 
             <div class="container">
                 <div class="settings-header">
                     <h1>Library Management System Settings</h1>
                 </div>
                 <div class="settings-content">
-                    <form>
+                    <% if (!message.isEmpty()) { %>
+                        <div class="alert <%= message.contains("Error") || message.contains("Please enter valid") ? "alert-danger" : "alert-success" %>">
+                            <%= message %>
+                        </div>
+                    <% } %>
+
+                    <form method="POST" action="setting.jsp">
                         <div class="settings-section">
                             <h2>General Settings</h2>
                             <div class="form-group">
                                 <label for="library-name">Library Name</label>
-                                <input type="text" id="library-name" value="Central Library">
+                                <input type="text" id="library-name" name="library-name" 
+                                       value="<%= currentSettings.getLibraryName() != null ? currentSettings.getLibraryName() : "" %>" 
+                                       required>
                             </div>
 
                             <div class="form-group">
                                 <label for="contact-number">Library Contact Number</label>
-                                <input type="text" id="contact-number" value="+94 71 123 4567">
+                                <input type="text" id="contact-number" name="contact-number" 
+                                       value="<%= currentSettings.getContactNumber() != null ? currentSettings.getContactNumber() : "" %>" 
+                                       required pattern="[\+]?[0-9\s\-]{10,}" title="Please enter a valid phone number">
                             </div>
+
                             <div class="form-group">
                                 <label for="library-email">Library Email</label>
-                                <input type="email" id="library-email" value="central.library@gmail.com">
+                                <input type="email" id="library-email" name="library-email" 
+                                       value="<%= currentSettings.getLibraryEmail() != null ? currentSettings.getLibraryEmail() : "" %>" 
+                                       required>
                             </div>
 
                             <div class="form-group">
                                 <label for="max-books">Maximum Books Per User</label>
-                                <input type="number" id="max-books" value="5">
+                                <input type="number" id="max-books" name="max-books" 
+                                       value="<%= currentSettings.getMaxBooks() %>" 
+                                       required min="1">
                             </div>
+
                             <div class="form-group">
                                 <label for="fine-rate">Late Return Fine Rate (per day)</label>
-                                <input type="number" id="fine-rate" value="1">
+                                <input type="number" id="fine-rate" name="fine-rate" 
+                                       value="<%= currentSettings.getFineRate() %>" 
+                                       required min="0">
                             </div>
+                                       
                         </div>
+                                       
                         <button type="submit" class="btn">Save Settings</button>
-
+                                       
                     </form>
                 </div>
             </div>
         </div>
-        <footer style="background-color: #2c3e50; color: white; text-align: center; padding: 15px;">
+        <footer>
             Library System © All rights reserved 2025
         </footer>
     </body>
