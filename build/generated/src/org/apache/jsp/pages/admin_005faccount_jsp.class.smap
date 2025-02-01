@@ -1,0 +1,20 @@
+SMAP
+admin_005faccount_jsp.java
+JSP
+*S JSP
+*F
++ 0 admin_account.jsp
+pages/admin_account.jsp
++ 1 header.jsp
+pages/header.jsp
+*L
+5,17:49
+1#1:66,2
+4,6:70
+9,57:76
+66:133,3
+67,2:136
+69:138,3
+70,29:141
+21#0,61:169
+*E

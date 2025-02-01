@@ -5,6 +5,12 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="library.classes.Home"%>
+<%
+Home home = new Home();
+home.TotalBooks();
+%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -24,18 +30,18 @@
             <!-- Main Content -->
             <div style="flex-grow: 1; padding: 20px; background-color: #f5f6fa;">
                 <div style="margin-bottom: 20px;">
-                    <img src="../images/BGimage.jpeg" style="width: 100%; height: 300px; object-fit: cover; border-radius: 8px;">
+                    <img src="../images/BGimage_enhanced.jpeg" style="width: 100%; height: 300px; object-fit: cover; border-radius: 8px;">
                 </div>
 
                 <!-- Dashboard Cards -->
                 <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
                     <div style="background-color: #3498db; color: white; padding: 20px; border-radius: 8px;">
                         <h3 style="margin: 0;">Total Books</h3>
-                        <p style="font-size: 24px; margin: 10px 0;">1,234</p>
+                        <p style="font-size: 24px; margin: 10px 0;"><%=home.TotalBooks() %></p>
                     </div>
                     <div style="background-color: #2ecc71; color: white; padding: 20px; border-radius: 8px;">
                         <h3 style="margin: 0;">Available Books</h3>
-                        <p style="font-size: 24px; margin: 10px 0;">1,100</p>
+                        <p style="font-size: 24px; margin: 10px 0;"><%=home.AvailableBooks() %></p>
                     </div>
                     <div style="background-color: #e74c3c; color: white; padding: 20px; border-radius: 8px;">
                         <h3 style="margin: 0;">Borrowed Books</h3>
@@ -43,7 +49,7 @@
                     </div>
                     <div style="background-color: #f1c40f; color: white; padding: 20px; border-radius: 8px;">
                         <h3 style="margin: 0;">Total Members</h3>
-                        <p style="font-size: 24px; margin: 10px 0;">567</p>
+                        <p style="font-size: 24px; margin: 10px 0;"><%=home.TotalMembers() %></p>
                     </div>
                 </div>
             </div>
