@@ -4,9 +4,9 @@ JSP
 *S JSP
 *F
 + 0 home.jsp
-pages/home.jsp
+pages/Home/home.jsp
 + 1 header.jsp
-pages/header.jsp
+pages/Home/../header.jsp
 *L
 5,8:50
 12,17:58

@@ -15,7 +15,7 @@
   if(admin.authenticate()){
       session.setAttribute("admin_id", admin.getAdmin_id());
       session.setAttribute("username", admin.getUsername());
-      response.sendRedirect("home.jsp");
+      response.sendRedirect("Home/home.jsp");
   }else{
       response.sendRedirect("login.jsp?s=0");
   }
