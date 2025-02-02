@@ -3,6 +3,7 @@ package org.apache.jsp.pages;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
+import library.classes.MD5;
 import library.classes.Admin;
 
 public final class login_005fprocess_jsp extends org.apache.jasper.runtime.HttpJspBase
@@ -42,9 +43,10 @@ public final class login_005fprocess_jsp extends org.apache.jasper.runtime.HttpJ
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
 
     String username = request.getParameter("username");
     String password = request.getParameter("password");
