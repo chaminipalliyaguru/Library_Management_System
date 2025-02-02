@@ -3,8 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/Library_Management_System/src/java/library/classes/Setting.java</file>
-            <file>file:/C:/Users/User/Documents/NetBeansProjects/Library_Management_System/web/pages/setting.jsp</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/Library_Management_System/web/pages/add_transaction.jsp</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/Library_Management_System/web/pages/home.jsp</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/Library_Management_System/web/pages/transaction.jsp</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/Library_Management_System/web/pages/transaction_details.jsp</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/Library_Management_System/web/pages/header.jsp</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/Library_Management_System/web/pages/login_process.jsp</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/Library_Management_System/web/pages/login.jsp</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/Library_Management_System/web/pages/delete_transaction.jsp</file>
+            <file>file:/C:/Users/User/Documents/NetBeansProjects/Library_Management_System/web/pages/return_transaction.jsp</file>
         </group>
     </open-files>
 </project-private>

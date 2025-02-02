@@ -44,8 +44,8 @@ home.TotalBooks();
                         <p style="font-size: 24px; margin: 10px 0;"><%=home.AvailableBooks() %></p>
                     </div>
                     <div style="background-color: #e74c3c; color: white; padding: 20px; border-radius: 8px;">
-                        <h3 style="margin: 0;">Borrowed Books</h3>
-                        <p style="font-size: 24px; margin: 10px 0;">134</p>
+                        <h3 style="margin: 0;">Transactions</h3>
+                        <p style="font-size: 24px; margin: 10px 0;"><%=home.TotalTransactions() %></p>
                     </div>
                     <div style="background-color: #f1c40f; color: white; padding: 20px; border-radius: 8px;">
                         <h3 style="margin: 0;">Total Members</h3>
