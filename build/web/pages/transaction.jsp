@@ -107,17 +107,17 @@
                                 </td>
                                 <!-- Inside the table body, where the Actions column is defined -->
                                 <td style="padding: 12px; border-bottom: 1px solid #ddd;">
-                                    <% if (!"Return".equals(transaction.getStatus())) { %>
-                                    <a href="return_transaction.jsp?transactionId=<%= transaction.getTransactionId() %>"> 
-    <button style="background-color: #2ecc71; color: white; border: none; padding: 5px 10px; border-radius: 4px; margin-right: 5px; cursor: pointer;">Return</button>
-</a>
-                                    <% }else{%>
+                                    <% if (!"Return".equals(transaction.getStatus())) {%>
+                                    <a href="return_transaction.jsp?transactionId=<%= transaction.getTransactionId()%>"> 
+                                        <button style="background-color: #2ecc71; color: white; border: none; padding: 5px 10px; border-radius: 4px; margin-right: 5px; cursor: pointer;">Return</button>
+                                    </a>
+                                    <% } else {%>
                                     <button 
                                         style="background-color: #e74c3c; color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer;" 
                                         onclick="confirmDelete('<%= transaction.getTransactionId()%>')">
                                         Delete
                                     </button>
-                                        <% } %>
+                                    <% } %>
                                 </td>
                             </tr>
                             <% }%>
