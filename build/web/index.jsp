@@ -113,7 +113,7 @@
                 <h1>Login Here..</h1>
                 <%=message %>
             </div>
-            <form class="login-form" action="../pages/login_process.jsp" method="POST">
+            <form class="login-form" action="login_process.jsp" method="POST">
                 <label for="username">Username:</label>
                 <input type="email" id="username" name="username" placeholder="Enter username" required>
 
