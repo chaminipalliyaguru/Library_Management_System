@@ -6,7 +6,7 @@ import java.util.List;
 import java.sql.PreparedStatement;
 
 public class Transaction {
-    private int transactionId; // Add this field
+    private int transactionId; 
     private int userId;
     private int bookId;
     private int quantity;
