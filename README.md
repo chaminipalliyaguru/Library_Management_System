@@ -6,7 +6,8 @@ Library Management System is a web-based application designed to streamline the 
 ## Table of Contents
 1. Features
 2. Technology Stack
-3. License
+3. Screenshots
+4. License
 
 ## Features
 1. Book Management:
@@ -28,15 +29,16 @@ A dedicated interface for library administrators to oversee and manage operation
 
 ## Technology Stack
 
-### Frontend:
-HTML
-CSS
+- Frontend: HTML, CSS
+- Backend: Java (JSP, JDBC, OOP concepts)
+- Database: MySQL
 
-### Backend:
-JSP
+## Screenshots
+![1739252428970](https://github.com/user-attachments/assets/97d50eb0-fe37-43e4-87fe-a5628fb7c6ad)
+![1739252452688](https://github.com/user-attachments/assets/50a57c0f-d7ab-4f2c-a940-0a183ffa8402)
+![1739252462263](https://github.com/user-attachments/assets/10354e9a-aaaa-407e-8358-b585d6ffd74b)
 
-### Database:
-MySQL
+
 
 ## License
 This project is licensed under the MIT License. See the LICENSE file for details.
